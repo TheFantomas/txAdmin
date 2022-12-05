@@ -15,14 +15,16 @@ The permissions are saved in the `txData/admins.json` file and can be edited thr
 - `server.cfg.editor`: Read/Write server.cfg;
 - `txadmin.log.view`: View txAdmin Log;
 - `menu.vehicle`: Spawn / Fix Vehicles;
+- `menu.clear_area`: Clears the area in the selected radius. The maximum value is 300;
+- `menu.viewids`: An id will appear above the players heads;
 - `players.message`: Announcement / DM;
 - `players.whitelist`: Whitelist player;
 - `players.warn`: Warn player;
 - `players.kick`: Kick player;
 - `players.ban`: Ban player;
+- `players.freeze`: Freeze a players ped;
 - `players.heal`: Heal self or everyone;
 - `players.playermode`: NoClip / God Mode;
 - `players.spectate`: Spectate player;
 - `players.teleport`: Teleport self or player;
-- `players.trollmenu`: Troll Menu (*not yet available*);
-- `players.freeze`: Freeze a players ped;
+- `players.troll`: Troll Menu (*not yet available*);
