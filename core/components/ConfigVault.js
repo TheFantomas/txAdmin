@@ -114,6 +114,7 @@ export default class ConfigVault {
                 serverName: toDefault(cfg.global.serverName, null),
                 language: toDefault(cfg.global.language, null),
                 menuEnabled: toDefault(cfg.global.menuEnabled, true),
+                licensePlate: toDefault(cfg.global.licensePlate, true),
                 menuAlignRight: toDefault(cfg.global.menuAlignRight, false),
                 menuPageKey: toDefault(cfg.global.menuPageKey, 'Tab'),
             };
@@ -194,6 +195,7 @@ export default class ConfigVault {
             cfg.global.serverName = cfg.global.serverName || 'change-me';
             cfg.global.language = cfg.global.language || 'en'; //TODO: move to GlobalData
             cfg.global.menuEnabled = (cfg.global.menuEnabled === 'true' || cfg.global.menuEnabled === true);
+            cfg.global.licensePlate = (cfg.global.licensePlate === 'true' || cfg.global.licensePlate === true);
             cfg.global.menuAlignRight = (cfg.global.menuAlignRight === 'true' || cfg.global.menuAlignRight === true);
             cfg.global.menuPageKey = cfg.global.menuPageKey || 'Tab';
 

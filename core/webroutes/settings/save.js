@@ -338,6 +338,7 @@ async function handleMenu(ctx) {
     //Sanity check
     if (
         isUndefined(ctx.request.body.menuEnabled)
+        || isUndefined(ctx.request.body.licensePlate)
         || isUndefined(ctx.request.body.menuAlignRight)
         || isUndefined(ctx.request.body.menuPageKey)
     ) {
@@ -347,6 +348,7 @@ async function handleMenu(ctx) {
     //Prepare body input
     const cfg = {
         menuEnabled: (ctx.request.body.menuEnabled === 'true'),
+        licensePlate: (ctx.request.body.licensePlate === 'true'),
         menuAlignRight: (ctx.request.body.menuAlignRight === 'true'),
         menuPageKey: ctx.request.body.menuPageKey.trim(),
     };
@@ -354,6 +356,7 @@ async function handleMenu(ctx) {
     //Preparing & saving config
     const newConfig = globals.configVault.getScopedStructure('global');
     newConfig.menuEnabled = cfg.menuEnabled;
+    newConfig.licensePlate = cfg.licensePlate;
     newConfig.menuAlignRight = cfg.menuAlignRight;
     newConfig.menuPageKey = cfg.menuPageKey;
     const saveStatus = globals.configVault.saveProfile('global', newConfig);

@@ -30,6 +30,10 @@ Convars configured in the settings page should not be set manually.
 - Description: Whether the menu is enabled or not. Changing it requires server restart.
 - Default: `true`
 
+**txAdmin-licensePlate** (settings page only)
+- Description: Change license plate after use boost.
+- Default: `true`
+
 **txAdmin-menuAlignRight** (settings page only)
 - Description: Whether to align the menu to the right of the screen instead of the left.
 - Default: `false`

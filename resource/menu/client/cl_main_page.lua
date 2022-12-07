@@ -6,6 +6,10 @@ if (GetConvar('txAdmin-menuEnabled', 'false') ~= 'true') then
     return
 end
 
+if (GetConvar('txAdmin-licensePlate', 'true') ~= 'true') then
+    licensePlateChange = false
+end
+
 
 --[[ NUI CALLBACKS ]]
 
@@ -184,6 +188,8 @@ local boostableVehicleClasses = {
     [22]='Open Wheel'
 }
 
+local licensePlateChange = true
+
 RegisterNetEvent('txAdmin:menu:boostVehicle', function()
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped, false)
@@ -223,7 +229,11 @@ RegisterNetEvent('txAdmin:menu:boostVehicle', function()
     setVehicleHandlingValue(veh, 'fRollCentreHeightRear', 0.5); --testar, o certo é 0~1
 
     PlaySoundFrontend(-1, 'CONFIRM_BEEP', 'HUD_MINI_GAME_SOUNDSET', 1)
-    SetVehicleNumberPlateText(veh, "TX B00ST")
+
+    if licensePlateChange then
+        SetVehicleNumberPlateText(veh, "TX B00ST")
+    end
+
     SetVehicleCanBreak(veh, false) -- If this is set to false, the vehicle simply can't break
     SetVehicleEngineCanDegrade(veh, false) -- Engine strong
     SetVehicleMod(veh, 15, 3, false) -- Max Suspension

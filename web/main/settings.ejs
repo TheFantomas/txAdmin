@@ -418,6 +418,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">License Plate Settings</label>
+                            <div class="col-sm-9">
+                                <label class="c-switch c-switch-label c-switch-pill c-switch-success fix-pill-form">
+                                    <input class="c-switch-input" type="checkbox" id="frmMenu-plate"
+                                        <%= global.licensePlate || '' %> <%= readOnly ? 'disabled' : '' %>>
+                                    <span class="c-switch-slider" data-checked="Yes" data-unchecked="No"></span>
+                                </label>
+                                <span class="form-text text-muted">
+                                    When enabled, <code>license plate will change to tx boost</code>after clicking on boost.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Align Right</label>
                             <div class="col-sm-9">
                                 <label class="c-switch c-switch-label c-switch-pill c-switch-success fix-pill-form">
@@ -674,6 +688,7 @@
     $('#frmMenu-save').click(function () {
         let data = {
             menuEnabled: ($('#frmMenu-enabled').is(':checked') === true),
+            licensePlate: ($('#frmMenu-plate').is(':checked') === true),
             menuAlignRight: ($('#frmMenu-alignRight').is(':checked') === true),
             menuPageKey: $('#frmMenu-pageKey').val().trim()
         };
